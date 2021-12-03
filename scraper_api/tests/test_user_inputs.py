@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.insert(0, '/Users/leona/python/Projects/scraper_files/scraper_api')
+sys.path.insert(0, '/Users/leona/python/Projects/scraper_files/scraper_api/script')
 from user_inputs import process_input
 
 class TestingUserInputs(unittest.TestCase):

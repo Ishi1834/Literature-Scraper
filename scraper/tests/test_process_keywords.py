@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.insert(0, '/Users/leona/python/Projects/scraper_files/scraper')
+sys.path.insert(0, '/Users/leona/python/Projects/scraper_files/scraper/script')
 from process_keywords import keyword_analyser
 from make_spreadsheet import initiate_spreedsheet
 

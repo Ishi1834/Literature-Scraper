@@ -1,7 +1,7 @@
 import unittest
 import sys
 from unittest.mock import patch
-sys.path.insert(0, '/Users/leona/python/Projects/scraper_files/scraper')
+sys.path.insert(0, '/Users/leona/python/Projects/scraper_files/scraper/script')
 from make_soup import create_soup
 
 

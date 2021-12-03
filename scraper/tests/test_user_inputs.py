@@ -1,7 +1,7 @@
 import unittest
 import sys
 from unittest import mock
-sys.path.insert(0, '/Users/leona/python/Projects/scraper_files/scraper')
+sys.path.insert(0, '/Users/leona/python/Projects/scraper_files/scraper/script')
 from user_inputs import process_input
 
 class TestingUserInputs(unittest.TestCase):

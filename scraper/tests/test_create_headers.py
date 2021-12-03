@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.insert(0, '/Users/leona/python/Projects/scraper_files/scraper')
+sys.path.insert(0, '/Users/leona/python/Projects/scraper_files/scraper/script')
 from create_headers import process_headers
 
 class TestingHeaders(unittest.TestCase):
