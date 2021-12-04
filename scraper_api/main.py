@@ -12,8 +12,11 @@ CORS(app)
 def result():
     output = request.get_json()
 
-    if len(output.keys()) < 2:
-        return {"status":"BAD REQUEST"}
+    try: 
+        if len(output.keys()) < 2:
+            return {"status":"BAD REQUEST"}
+    except:
+        return {"status":"no json received"}
 
     #from here
     title = output['title']

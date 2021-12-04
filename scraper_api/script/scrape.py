@@ -12,7 +12,7 @@ def scrape_articles(myLink, allKeywords, articlesMin, articleDict, checkIfIn, co
         try:
             title = article.h3.a.text
             description = article.find(class_="gs_rs").text
-            link = article.h3.a.get('href')
+            link = article.h3.a.get('href') 
             prevCite = article.find("a", class_="gs_or_cit gs_or_btn gs_nph")
             cite = prevCite.find_next_sibling("a")
             otherArticles = cite.find_next_sibling("a")
@@ -46,7 +46,8 @@ def scrape_articles(myLink, allKeywords, articlesMin, articleDict, checkIfIn, co
     if len(articleDict) >= articlesMin:
         return articleDict
     else:
-        newLink = articleDict[(count-pageArticles)]['relatedArticles']
+        newLink = articleDict[(count-pageArticles)]['relatedArticles'] 
+        print(newLink)
         return scrape_articles( newLink, allKeywords, articlesMin, articleDict, checkIfIn, count) 
 
 
