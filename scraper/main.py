@@ -1,7 +1,7 @@
-from make_soup import create_soup
-from user_inputs import process_input
-from make_spreadsheet import initiate_spreedsheet
-from process_keywords import keyword_analyser
+from script.make_soup import create_soup
+from script.user_inputs import process_input
+from script.make_spreadsheet import initiate_spreedsheet
+from script.process_keywords import keyword_analyser
 
 def scrape_articles(myLink):
     

@@ -1,5 +1,5 @@
-from make_soup import create_soup
-from process_keywords import keyword_analyser
+from script.make_soup import create_soup
+from script.process_keywords import keyword_analyser
 
 def scrape_articles(myLink, allKeywords, articlesMin, articleDict, checkIfIn, count):
     

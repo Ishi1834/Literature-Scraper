@@ -1,7 +1,8 @@
 from flask import Flask, request
 from flask_cors import CORS
-from scrape import scrape_articles
-from user_inputs import process_input
+from script.scrape import scrape_articles
+from script.user_inputs import process_input
+
 
 app = Flask(__name__)
 CORS(app)

@@ -2,7 +2,7 @@ import requests
 import random 
 from bs4 import BeautifulSoup
 import time
-from create_headers import process_headers
+from script.create_headers import process_headers
 
 headers_list = process_headers()
 def create_soup(link):
