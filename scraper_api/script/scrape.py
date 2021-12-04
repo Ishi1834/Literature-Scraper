@@ -20,24 +20,20 @@ def scrape_articles(myLink, allKeywords, articlesMin, articleDict, checkIfIn, co
             citations = int(citations.split()[2]) # converts 'Cited by 1367' to 1367
             relatedArticles = "https://scholar.google.com" + otherArticles.get('href')
         except:
-            #print('error with link', link)
             continue
-        
-        
+
         if title in checkIfIn:
-            #print(title, 'is already here')
             continue
 
-
+        #adds title to checkIfIn list
+        checkIfIn.append(title)
+        
         #using keyword_analyser() to see how many times a given keyword appears
         keywordRanking = keyword_analyser(description, allKeywords)
         
         #adding to dict
         articleDict[count] = {'title': title ,"description":description,"link":link,"citations":citations, "ranking": keywordRanking, 'relatedArticles': relatedArticles}
-
-        #adds title to check if it is already in the list
-        checkIfIn.append(title)
-
+        
         pageArticles = pageArticles + 1
         count = count + 1
     """
@@ -46,9 +42,13 @@ def scrape_articles(myLink, allKeywords, articlesMin, articleDict, checkIfIn, co
     if len(articleDict) >= articlesMin:
         return articleDict
     else:
-        newLink = articleDict.get(count-pageArticles)['relatedArticles'] 
-        print(newLink)
-        return scrape_articles( newLink, allKeywords, articlesMin, articleDict, checkIfIn, count) 
+        try:
+            newLink = articleDict.get(count-pageArticles)['relatedArticles'] 
+            return scrape_articles( newLink, allKeywords, articlesMin, articleDict, checkIfIn, count) 
+        except:
+            newLink = articleDict.get(count)['relatedArticles'] 
+            return scrape_articles( newLink, allKeywords, articlesMin, articleDict, checkIfIn, count) 
+
 
 
 
