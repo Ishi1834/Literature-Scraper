@@ -46,7 +46,7 @@ def scrape_articles(myLink, allKeywords, articlesMin, articleDict, checkIfIn, co
     if len(articleDict) >= articlesMin:
         return articleDict
     else:
-        newLink = articleDict[(count-pageArticles)]['relatedArticles'] 
+        newLink = articleDict.get(count-pageArticles)['relatedArticles'] 
         print(newLink)
         return scrape_articles( newLink, allKeywords, articlesMin, articleDict, checkIfIn, count) 
 
