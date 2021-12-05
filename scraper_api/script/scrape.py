@@ -44,9 +44,11 @@ def scrape_articles(myLink, allKeywords, articlesMin, articleDict, checkIfIn, co
     else:
         try:
             newLink = articleDict.get(count-pageArticles)['relatedArticles'] 
+            print('except not reached')
             return scrape_articles( newLink, allKeywords, articlesMin, articleDict, checkIfIn, count) 
         except:
             newLink = articleDict.get(count)['relatedArticles'] 
+            print('exception')
             return scrape_articles( newLink, allKeywords, articlesMin, articleDict, checkIfIn, count) 
 
 
